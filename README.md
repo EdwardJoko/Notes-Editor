@@ -1,6 +1,6 @@
 ### Notes Editor
 
-I made this script on 2019 to automatically edit the notes that I copied from [freeCodeCamp](https://www.freecodecamp.org/learn/).
+I made this script on 2019 (first year learn to code) to automatically edit the notes that I copied from [freeCodeCamp](https://www.freecodecamp.org/learn/).
 
 It changes the notes from like this, (the result of copying directly from freeCodeCamp)
 
