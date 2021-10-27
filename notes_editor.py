@@ -1,3 +1,5 @@
+from pathlib import Path
+
 def edit_file(file_name):
     # read the text of the file and split it according to newline,
     # and store the content to 'lines' variable
@@ -54,15 +56,24 @@ if __name__ == "__main__":
     # asking input the names of the files
     input_desc = "Give me all the files...\n" \
             "Separate the name of the files with a space.\n" \
-            "For example: \'file_1 file_2\'\n\n"
+            "For example: \'file_1 file_2\'.\n" \
+            "Make sure the file is in the same directiory.\n\n"
     files_string = input(input_desc)
 
     # split the string of the input according to space,
     # so we have an array that consists of files' name
     files_array = files_string.split()
 
-    # edit all the files with loop
+    # remove not exist files
+    exst_files = []
     for file in files_array:
+        path_file = "./" + file
+        # if file is not exists
+        if (Path(path_file).exists()):
+            exst_files.append(file)
+
+    # edit all the files with loop
+    for file in exst_files:
         edit_file(file)
     
-    print(f"All of these documents is successfully edited!\n\t{files_array}")
+    print(f"All of these documents are successfully edited!\n\t{exst_files}")
